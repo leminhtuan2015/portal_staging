@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :customers, controllers: {
+        sessions: 'customers/sessions',
+        registrations: 'customers/registrations',
+        passwords: 'customers/passwords'
+      }
+      
   # TODO: use only in archive sidebar. See how made other system
   get ':year/:month', :to => 'articles#index', :year => /\d{4}/, :month => /\d{1,2}/, :as => 'articles_by_month', :format => false
   get ':year/:month/page/:page', :to => 'articles#index', :year => /\d{4}/, :month => /\d{1,2}/, :as => 'articles_by_month_page', :format => false
@@ -111,7 +117,9 @@ Rails.application.routes.draw do
     match "/admin/#{i}(/:action(/:id))", to: "admin/#{i}", action: nil, id: nil, format: false, via: [:get, :post, :put, :delete] # TODO: convert this magic catchers to resources item to close un-needed HTTP method
   end
 
-  root :to  => 'articles#index', :format => false
-
+  # root :to  => 'articles#index', :format => false
+  resources :articles, only: [:index]
+  resources :customers
+  root "customers#index"
   get '*from', :to => 'articles#redirect', :format => false
 end
