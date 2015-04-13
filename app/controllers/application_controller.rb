@@ -4,9 +4,8 @@
 class ApplicationController < ActionController::Base
   include ::LoginSystem
   protect_from_forgery :only => [:edit, :update, :delete]
-  
+
   before_filter :reset_local_cache, :fire_triggers, :load_lang, :set_paths
-  before_action :configure_permitted_parameters, if: :devise_controller?
   after_filter :reset_local_cache
 
   class << self
@@ -66,12 +65,4 @@ class ApplicationController < ActionController::Base
   def this_blog
     @blog ||= Blog.default
   end
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit :name, :email,
-      :password, :password_confirmation, :remember_me, :avatar}
-    devise_parameter_sanitizer.for(:account_update) {|u| u.permit :name, 
-      :email, :password, :password_confirmation, :current_password, :avatar}
-  end
-  
 end

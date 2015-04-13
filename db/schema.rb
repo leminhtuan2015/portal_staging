@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410083142) do
+ActiveRecord::Schema.define(version: 115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,39 +53,6 @@ ActiveRecord::Schema.define(version: 20150410083142) do
 
   add_index "contents", ["published"], name: "index_contents_on_published", using: :btree
   add_index "contents", ["text_filter_id"], name: "index_contents_on_text_filter_id", using: :btree
-
-  create_table "customers", force: true do |t|
-    t.string   "company"
-    t.string   "family_name"
-    t.string   "first_name"
-    t.string   "tel"
-    t.string   "password"
-    t.string   "postal_code"
-    t.string   "prefectural_id"
-    t.string   "city"
-    t.string   "street"
-    t.string   "building"
-    t.string   "siteurl"
-    t.date     "birthday"
-    t.integer  "sex"
-    t.integer  "mailmagazine_accepted"
-    t.string   "facebook_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-  end
-
-  add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
-  add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
 
   create_table "feedback", force: true do |t|
     t.string   "type"
