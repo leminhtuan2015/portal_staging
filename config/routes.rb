@@ -97,6 +97,7 @@ Rails.application.routes.draw do
 
     get 'cache', to: 'cache#show'
     delete 'cache', to: 'cache#destroy'
+    resources :customers
   end
 
   # Work around the Bad URI bug

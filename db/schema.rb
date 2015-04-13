@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413073134) do
+ActiveRecord::Schema.define(version: 20150414075109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20150413073134) do
     t.text   "settings"
     t.string "base_url"
   end
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "companies", ["name"], name: "index_companies_on_name", using: :btree
 
   create_table "contents", force: true do |t|
     t.string   "type"
@@ -180,6 +188,14 @@ ActiveRecord::Schema.define(version: 20150413073134) do
     t.string   "itunes_keywords"
     t.string   "itunes_category"
     t.boolean  "itunes_explicit"
+  end
+
+  create_table "seminers", force: true do |t|
+    t.string   "title"
+    t.string   "place"
+    t.datetime "date_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sidebars", force: true do |t|

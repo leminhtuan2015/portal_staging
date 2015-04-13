@@ -1,0 +1,24 @@
+<% if @customers.nil? %>
+  <tr>
+    <td colspan="5">
+      <%= t "admin.customer.no_find_customer" %>
+    </td>
+  </tr>
+<% end %>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td>
+      <%= link_to customer.id, admin_customer_path(customer) %>
+      <br />
+      <%= button_to_edit customer %>
+      <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-trash"),
+        admin_customer_path(customer),
+        {class: "btn btn-danger btn-xs btn-action", method: :delete, data: {confirm: t("admin.customer.confirm_del_customer")}} %>
+    </td>
+    <td><%= customer.id %></td>
+    <td>
+      <small><%= l customer.created_at %></small>
+    </td>
+  </tr>
+<% end %>
