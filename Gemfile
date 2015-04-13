@@ -32,7 +32,6 @@ gem "non-stupid-digest-assets"
 
 gem "actionpack-page_caching", "~> 1.0.2"
 gem "rails-observers", "~> 0.1.2"
-gem "devise"
 
 group :assets do
   gem "sass-rails", " ~> 4.0.3"
