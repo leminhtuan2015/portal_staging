@@ -35,3 +35,9 @@ contributor = Profile.create(label: 'contributor', nicename: 'Contributor',
                              modules: [:dashboard, :profile ])
 
 Dir.mkdir("#{::Rails.root.to_s}/public/files") unless File.directory?("#{::Rails.root.to_s}/public/files")
+
+require "csv"
+prefecturals = CSV.read "db/prefectural.csv"
+prefecturals.each do |prefectural|
+  Prefectural.create name: prefectural[1]
+end
