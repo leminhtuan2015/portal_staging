@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413034055) do
+ActiveRecord::Schema.define(version: 20150413073134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,28 @@ ActiveRecord::Schema.define(version: 20150413034055) do
   add_index "contents", ["published"], name: "index_contents_on_published", using: :btree
   add_index "contents", ["text_filter_id"], name: "index_contents_on_text_filter_id", using: :btree
 
+  create_table "customers", force: true do |t|
+    t.string   "company"
+    t.string   "family_name"
+    t.string   "first_name"
+    t.string   "tel"
+    t.string   "password"
+    t.string   "postal_code"
+    t.integer  "prefectural_id"
+    t.string   "city"
+    t.string   "street"
+    t.string   "building"
+    t.string   "siteurl"
+    t.date     "birthday"
+    t.integer  "sex"
+    t.boolean  "mailmagazine_accepted"
+    t.string   "facebook_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "customers", ["prefectural_id"], name: "index_customers_on_prefectural_id", using: :btree
+
   create_table "feedback", force: true do |t|
     t.string   "type"
     t.string   "title"
@@ -80,6 +102,16 @@ ActiveRecord::Schema.define(version: 20150413034055) do
 
   add_index "feedback", ["article_id"], name: "index_feedback_on_article_id", using: :btree
   add_index "feedback", ["text_filter_id"], name: "index_feedback_on_text_filter_id", using: :btree
+
+  create_table "mail_templates", force: true do |t|
+    t.string   "name"
+    t.string   "subject"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "mail_templates", ["name"], name: "index_mail_templates_on_name", unique: true, using: :btree
 
   create_table "page_caches", force: true do |t|
     t.string "name"
