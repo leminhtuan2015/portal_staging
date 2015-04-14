@@ -12,6 +12,11 @@ describe Admin::MailTemplatesController do
     it {expect(assigns[:mail_templates]).to eq mail_templates}
   end
 
+  describe "GET #new" do
+    before {get :new}
+    it {expect(response).to render_template :new}
+  end
+
   describe "POST #create" do
     let(:mail_template_params) {{name: "name", subject: "", text: ""}}
     it do
@@ -38,6 +43,19 @@ describe Admin::MailTemplatesController do
         expect(response).to render_template :new
       end
     end
+  end
+
+  describe "GET #show" do
+    let(:mail_template) {FactoryGirl.create :mail_template}
+    before {get :show, id: mail_template.id}
+    it {expect(response).to render_template :show}
+  end
+
+  describe "GET #edit" do
+    let(:mail_template) {FactoryGirl.create :mail_template}
+    before {get :edit, id: mail_template.id}
+    it {expect(assigns[:mail_template]).to eq mail_template}
+    it {expect(response).to render_template :edit}
   end
 
   describe "POST #update" do

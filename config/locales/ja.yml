@@ -237,6 +237,9 @@ ja:
       index:
         mail_templates: "メールマスタ"
         new_mail_template: "メールテンプレートを新規作成しました。"
+        sure: "このメールテンプレートを削除していますか。"
+        name: "管理用名称"
+        subject: "件名"
       form:
         name: "管理用名称"
         subject: "件名"
@@ -252,6 +255,7 @@ ja:
         show_mail_template: "メールテンプレート表示"
         delete_mail_template: "メールテンプレート削除"
         edit_mail_template: "メールテンプレート編集"
+        sure: "このメールテンプレートを削除していますか。"
     notes:
       header:
         notes: "Notes"

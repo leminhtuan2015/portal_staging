@@ -1,0 +1,11 @@
+<%- content_for :page_heading do %>
+  <h2>
+    <i class="glyphicon glyphicon-large glyphicon-th-list"></i>
+    <%= "#{t ".show_mail_template"}: #{@mail_template.name}" %>
+    <%= link_to t(".delete_mail_template"), admin_mail_template_path(@mail_template),  method: :delete, data: {confirm: t(".sure")}, class: "btn btn-danger pull-right" %>
+    <%= link_to t(".edit_mail_template"), edit_admin_mail_template_path(@mail_template), class: "btn btn-info pull-right" %>
+  </h2>
+<% end %>
+
+<h2><%= @mail_template.subject %></h2>
+<%= @mail_template.text %>

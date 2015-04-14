@@ -7,6 +7,10 @@ class Admin::MailTemplatesController < Admin::BaseController
     @mail_templates = MailTemplate.page(params[:page]).per this_blog.limit_article_display
   end
 
+  def new
+    @mail_template = MailTemplate.new
+  end
+
   def create
     @mail_template = MailTemplate.new mail_template_params
     if @mail_template.save
@@ -16,6 +20,12 @@ class Admin::MailTemplatesController < Admin::BaseController
       flash[:error] = I18n.t "notice.mail_template.create_failed"
       render :new
     end
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def update
