@@ -144,6 +144,13 @@ en:
   notice:
     note_successfully_updated: "Note was successfully updated"
     note_successfully_created: "Note was successfully created"
+    mail_template:
+      successfully_created: "Mail template was successfully created"
+      create_failed: "Mail template create failed"
+      successfully_updated: "Mail template was successfully updated"
+      update_failed: "Mail template update failed"
+      successfully_destroyed: "Mail template was successfully deleted"
+      destroy_failed: "Mail template cannot be deleted"
   errors:
     problem_sending_to_twitter: "Oooops something wrong happened"
     you_are_not_allowed: "Error, you are not allowed to perform this action"
@@ -188,6 +195,25 @@ en:
       unsuccessfully_saved: "%{element} could not be saved."
       not_allowed: "Error, you are not allowed to perform this action"
       successfully_deleted: "This %{name} was deleted successfully"
+    mail_templates:
+      index:
+        mail_templates: "Mail Template"
+        new_mail_template: "New Mail Template"
+      form:
+        name: "Name"
+        subject: "Suject"
+        text: "Text"
+        save: "Save"
+      mail_template:
+        sure: "Are you sure?"
+      edit:
+        edit_mail_template: "Edit mail template"
+      new:
+        new_mail_template: "New mail template"
+      show:
+        show_mail_template: "Show mail template"
+        delete_mail_template: "Delete mail template"
+        edit_mail_template: "Edit mail template"
     notes:
       header:
         notes: "Notes"

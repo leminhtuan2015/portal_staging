@@ -144,6 +144,13 @@ ja:
   notice:
     note_successfully_updated: "Note was successfully updated"
     note_successfully_created: "Note was successfully created"
+    mail_template:
+      successfully_created: "メールテンプレートを作成成功しました。"
+      create_failed: "メールテンプレートを作成失敗しました。"
+      successfully_updated: "メールテンプレートを更新成功しました。"
+      update_failed: "メールテンプレートを更新失敗しました。"
+      successfully_destroyed: "メールテンプレートを削除成功しました。"
+      destroy_failed: "メールテンプレートを削除失敗しました。"
   errors:
     problem_sending_to_twitter: "Oooops something wrong happened"
     you_are_not_allowed: "Error, you are not allowed to perform this action"
@@ -188,6 +195,25 @@ ja:
       unsuccessfully_saved: "%{element} could not be saved."
       not_allowed: "Error, you are not allowed to perform this action"
       successfully_deleted: "This %{name} was deleted successfully"
+    mail_templates:
+      index:
+        mail_templates: "メールマスタ"
+        new_mail_template: "メールテンプレートを新規作成しました。"
+      form:
+        name: "管理用名称"
+        subject: "件名"
+        text: "本文"
+        save: "保存"
+      mail_template:
+        sure: "このメールテンプレートを削除していますか。"
+      edit:
+        edit_mail_template: "メールテンプレート編集"
+      new:
+        new_mail_template: "メールテンプレートを新規作成しました。"
+      show:
+        show_mail_template: "メールテンプレート表示"
+        delete_mail_template: "メールテンプレート削除"
+        edit_mail_template: "メールテンプレート編集"
     notes:
       header:
         notes: "Notes"
