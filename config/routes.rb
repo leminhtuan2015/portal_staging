@@ -93,6 +93,7 @@ Rails.application.routes.draw do
     end
 
     resources :notes, except: [:new]
+    resources :mail_templates
 
     get 'cache', to: 'cache#show'
     delete 'cache', to: 'cache#destroy'

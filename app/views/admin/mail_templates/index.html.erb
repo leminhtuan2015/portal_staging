@@ -1,0 +1,21 @@
+<%- content_for :page_heading do %>
+  <h2>
+    <i class="glyphicon glyphicon-large glyphicon-th-list"></i>
+    <%= t ".mail_templates" %>
+    <%= link_to t(".new_mail_template"), {controller: :mail_templates, action: :new}, class: "btn btn-info pull-right" %>
+  </h2>
+<% end %>
+
+<div class="col-md-8">
+  <table class="table table-striped">
+    <%- if @mail_templates.empty? %>
+      <tr>
+      <td colspan="3">
+        <%= t "admin.mail_templates.form.no_mail_templates" %>
+      </td>
+    </tr>
+  <%- end %>
+    <%= render @mail_templates %>
+    <%= display_pagination @mail_templates, 3, "first", "last" %>
+  </table>
+</div>
