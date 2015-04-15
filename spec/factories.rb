@@ -195,7 +195,7 @@ http://alsoping.example.com/rpc/ping"
     factory :profile_admin do
       label Profile::ADMIN
       nicename 'Publify administrator'
-      modules [ :dashboard, :write, :articles, :pages, :feedback, :themes, :customizesidebar, :users, :seo, :media, :settings, :profile, :notes ]
+      modules [ :dashboard, :write, :articles, :pages, :feedback, :themes, :customizesidebar, :users, :seo, :media, :settings, :profile, :notes, :customers ]
     end
 
     factory :profile_publisher do
@@ -322,5 +322,11 @@ http://alsoping.example.com/rpc/ping"
     guid 'dsafsadffsdsf'
     created_at Time.now
     updated_at Time.now
+  end
+
+  factory :customer do
+  end
+
+  factory :prefectural do
   end
 end

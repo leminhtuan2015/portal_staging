@@ -1,0 +1,8 @@
+<% content_for :page_heading do %>
+  <i class="icon-large icon-user-add"></i>
+  <h2 class="page-title">
+    <%= t "admin.customer.edit_customer" %>
+  </h2>
+<% end %>
+
+<%= render "admin/customers/form", customer: @customer %>

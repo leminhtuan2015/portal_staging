@@ -1,0 +1,18 @@
+<% content_for :page_heading do %>
+  <h2>
+    <i class="glyphicon glyphicon-large glyphicon-folder-open"></i>
+    <%= t "admin.customer.manage_customers" %>
+    <%= link_to t("admin.customer.new_customer"), new_admin_customer_path, id: "dialog-link", class: "btn btn-info pull-right" %>
+  </h2>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr class="noborder">
+      <th><%= t "admin.customer.title" %></th>
+      <th><%= t "admin.customer.permalink" %></th>
+      <th><%= t "admin.customer.author" %></th>
+    </tr>
+  </thead>
+  <%= render "customers" %>
+</table>

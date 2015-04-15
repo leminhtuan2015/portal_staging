@@ -1,0 +1,147 @@
+<%= form_for [:admin, customer] do |f| %>
+  <%= error_messages_for "customer" %>
+  <fieldset class="form-horizontal">
+    <legend><%= t "admin.customer.account_settings" %></legend>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_login">
+        <%= t "admin.customer.company" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :company, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="customer_password_">
+        <%= t "admin.content.form.password" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.password_field :password, class: "form-control"  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password_confirmation">
+        <%= t "admin.customer.password_confirmation" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-horizontal">
+    <legend><%= t "admin.customer.profile_settings" %></legend>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.familyname" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :family_name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.firstname" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.tel" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :tel, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.postal_code" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :postal_code, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.perfectural" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.select :prefectural_id, options_from_collection_for_select(Prefectural.all.collect, "id", "name"), class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.city" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :city, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.street" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :street, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.building" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :building, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.site_url" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :siteurl, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.birthday" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :birthday, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_password">
+        <%= t "admin.customer.sex" %>
+      </label>
+      <div class="col-sm-5">
+        <%= f.text_field :sex, class: "form-control" %>
+      </div>
+    </div>  
+  </fieldset>
+
+  <fieldset class="form-horizontal">
+    <legend><%= t "admin.customer.notification_settings" %></legend>
+    <div class="form-group">
+      <label class="control-label col-sm-2">
+        <%= t "admin.customer.notifications" %>
+      </label>
+      <div class="col-sm-5">
+        <label class="checkbox" for="user_notify_via_email">
+          <%= f.check_box :mailmagazine_accepted  %>
+          <%= t "admin.customer.mail_managize_accepted" %>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+  <% if(current_page?(action: "new") || current_page?(action: "edit")) %>
+    <div class="form-actions">
+      <hr />
+      <%= link_to t "admin.customer.cancel", action: "index" %>
+      <%= "or" %>
+      <%= f.submit t("admin.customer.save"), class: "btn btn-success" %>
+    </div>
+    <hr />
+  <% end %>
+<% end %>

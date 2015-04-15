@@ -89,4 +89,9 @@ AccessControl.map require: [ :admin, :publisher, :contributor ]  do |map|
     project.submenu "Permalinks",           { controller: "admin/seo", action: "permalinks" }
     project.submenu "Titles",               { controller: "admin/seo", action: "titles" }
   end
+
+  map.project_module :customers, nil do |project|
+    project.menu "Customer",  { controller: "admin/customers", action: "index" }
+  end
+
 end
