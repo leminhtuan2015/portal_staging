@@ -1,7 +1,7 @@
 class Admin::MailTemplatesController < Admin::BaseController
   layout "administration"
   cache_sweeper :blog_sweeper
-  before_filter :find_mail_templates, except: [:index, :new]
+  before_filter :find_mail_templates, except: [:index, :new, :create]
 
   def index
     @mail_templates = MailTemplate.page(params[:page]).per this_blog.limit_article_display
