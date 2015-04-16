@@ -195,7 +195,7 @@ http://alsoping.example.com/rpc/ping"
     factory :profile_admin do
       label Profile::ADMIN
       nicename 'Publify administrator'
-      modules [ :dashboard, :write, :articles, :pages, :feedback, :themes, :customizesidebar, :users, :seo, :media, :settings, :profile, :notes, :customers ]
+      modules [ :dashboard, :write, :articles, :pages, :feedback, :themes, :customizesidebar, :users, :seo, :media, :settings, :profile, :notes, :mail_templates, :customers ]
     end
 
     factory :profile_publisher do
@@ -328,5 +328,11 @@ http://alsoping.example.com/rpc/ping"
   end
 
   factory :prefectural do
+  end
+
+  factory :mail_template do
+    name "name"
+    subject "subject"
+    text "text"
   end
 end
