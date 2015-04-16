@@ -33,6 +33,11 @@ gem "non-stupid-digest-assets"
 gem "actionpack-page_caching", "~> 1.0.2"
 gem "rails-observers", "~> 0.1.2"
 
+gem 'capistrano'
+gem 'capistrano-ext'
+gem 'capistrano-rails'
+gem 'capistrano-rbenv', '~> 2.0'
+
 group :assets do
   gem "sass-rails", " ~> 4.0.3"
   gem "coffee-rails", " ~> 4.0.1"
@@ -50,6 +55,10 @@ group :development, :test do
   gem "guard-rspec",  require: false
   gem "guard-rubocop"
   gem "rubocop"
+end
+
+group :production do
+  gem 'unicorn', '4.8.3'
 end
 
 Dir.glob(File.join(File.dirname(__FILE__), "themes", "**", "Gemfile")) do |gemfile|

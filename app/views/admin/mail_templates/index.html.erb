@@ -6,7 +6,7 @@
   </h2>
 <% end %>
 
-<div class="col-md-8">
+<div class="col-md-12">
   <table class="table table-striped">
     <%- if @mail_templates.empty? %>
       <tr>
@@ -14,8 +14,15 @@
         <%= t "admin.mail_templates.form.no_mail_templates" %>
       </td>
     </tr>
-  <%- end %>
-    <%= render @mail_templates %>
+    <%- else %>
+      <thead>
+        <tr>
+          <th><%= t ".name" %></th>
+          <th><%= t ".subject" %></th>
+        </tr>
+      </thead>
+      <%= render @mail_templates %>
+    <%- end %>
     <%= display_pagination @mail_templates, 3, "first", "last" %>
   </table>
 </div>

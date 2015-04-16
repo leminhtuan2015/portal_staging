@@ -1,0 +1,25 @@
+<%= form_for [:admin, @mail_template] do |f| %>
+  <fieldset class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2"><%= t ".name" %></label>
+      <div class="col-sm-5">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2"><%= t ".subject" %></label>
+      <div class="col-sm-5">
+        <%= f.text_field :subject, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2"><%= t ".text" %></label>
+      <div class="col-sm-5">
+        <%= f.text_area :text, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit t(".save"), class: "btn btn-success" %>
+    </div>
+  </fieldset>
+<% end %>

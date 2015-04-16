@@ -199,6 +199,9 @@ en:
       index:
         mail_templates: "Mail Template"
         new_mail_template: "New Mail Template"
+        sure: "Are you sure?"
+        name: "Name"
+        subject: "Suject"
       form:
         name: "Name"
         subject: "Suject"
@@ -214,6 +217,7 @@ en:
         show_mail_template: "Show mail template"
         delete_mail_template: "Delete mail template"
         edit_mail_template: "Edit mail template"
+        sure: "Are you sure?"
     notes:
       header:
         notes: "Notes"
