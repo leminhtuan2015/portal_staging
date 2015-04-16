@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "2.1.5"
 
 gem "pg"
-
+gem 'sqlite3'
 gem "rails", "~> 4.1.1"
 gem "htmlentities"
 gem "bluecloth", "~> 2.1"
@@ -36,7 +36,7 @@ gem "rails-observers", "~> 0.1.2"
 gem 'capistrano'
 gem 'capistrano-ext'
 gem 'capistrano-rails'
-gem 'capistrano-rbenv', '~> 2.0'
+gem 'capistrano-rvm'
 
 group :assets do
   gem "sass-rails", " ~> 4.0.3"
